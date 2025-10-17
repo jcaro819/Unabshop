@@ -28,17 +28,19 @@ class MainActivity : ComponentActivity() {
 
             NavHost(navController, starDestination) {
                 composable(route="login"){
-                    LoginScreen()
+                    LoginScreen(onClickRegister = {
+                        navController.navigate("register")
+                    })
                 }
                 composable (route="register"){
-                    RegisterScreen()
+                    RegisterScreen(onClickBack = {
+                        navController.popBackStack()
+                    })
                 }
                 composable (route="home"){
                     HomeScreen()
                 }
             }
-
-            RegisterScreen()
         }
     }
 }
