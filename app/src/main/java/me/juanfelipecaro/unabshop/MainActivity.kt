@@ -11,36 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import me.juanfelipecaro.unabshop.ui.theme.MyApplicationTheme
+import me.juanfelipecaro.unabshop.NavigationApp
+import me.juanfelipecaro.unabshop.ui.theme.UnabShopTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
-            val navController = rememberNavController()
-            val starDestination = "login"
-
-            NavHost(navController, starDestination) {
-                composable(route="login"){
-                    LoginScreen(onClickRegister = {
-                        navController.navigate("register")
-                    })
-                }
-                composable (route="register"){
-                    RegisterScreen(onClickBack = {
-                        navController.popBackStack()
-                    })
-                }
-                composable (route="home"){
-                    HomeScreen()
-                }
-            }
+            NavigationApp()
         }
     }
 }
