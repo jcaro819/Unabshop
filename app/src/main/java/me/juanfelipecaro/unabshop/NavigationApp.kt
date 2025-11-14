@@ -7,8 +7,6 @@ import androidx.navigation.compose.rememberNavController
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import me.juanfelipecaro.unabshop.ui.HomeScreen
-import me.juanfelipecaro.unabshop.LoginScreen
-import me.juanfelipecaro.unabshop.RegisterScreen
 
 @Composable
 fun NavigationApp() {
